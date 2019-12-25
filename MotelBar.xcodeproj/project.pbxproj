@@ -65,6 +65,7 @@
 		85B905C523B41F2B002932FD /* NSMenu+CleanMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenu+CleanMenu.h"; sourceTree = "<group>"; };
 		85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+CleanMenu.m"; sourceTree = "<group>"; };
 		85B905CA23B4251D002932FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		85B905CE23B42D92002932FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 		8585BB9123AFC4BE00AC844A = {
 			isa = PBXGroup;
 			children = (
+				85B905CE23B42D92002932FD /* README.md */,
 				8585BB9C23AFC4BE00AC844A /* MotelBar */,
 				8585BB9B23AFC4BE00AC844A /* Products */,
 			);
