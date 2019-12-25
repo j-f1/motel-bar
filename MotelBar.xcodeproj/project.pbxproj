@@ -61,7 +61,7 @@
 		8585BBB623AFDFCE00AC844A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8585BBB823AFDFDF00AC844A /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		85B905C423B41F2B002932FD /* MotelBar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotelBar-Bridging-Header.h"; sourceTree = "<group>"; };
-		85B905C523B41F2B002932FD /* NSMenu+CleanMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenu+CleanMenu.h"; sourceTree = SOURCE_ROOT; };
+		85B905C523B41F2B002932FD /* NSMenu+CleanMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenu+CleanMenu.h"; sourceTree = "<group>"; };
 		85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+CleanMenu.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
