@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BonMot",
+        "repositoryURL": "https://github.com/Rightpoint/BonMot",
+        "state": {
+          "branch": null,
+          "revision": "359976f21e0e881f7f354bc6ccd34a8553b4f761",
+          "version": null
+        }
+      },
+      {
+        "package": "EventSource",
+        "repositoryURL": "https://github.com/MoveUpwardsDev/EventSource",
+        "state": {
+          "branch": null,
+          "revision": "316522ad8c5fe08775a8bcd1cdf55b976474b911",
+          "version": null
+        }
+      },
+      {
+        "package": "FootlessParser",
+        "repositoryURL": "https://github.com/kareman/FootlessParser",
+        "state": {
+          "branch": null,
+          "revision": "11c7a366720a2cc62d13ee69c8bdb8372bb3bb2b",
+          "version": "0.5.2"
+        }
+      },
+      {
+        "package": "Hue",
+        "repositoryURL": "https://github.com/zenangst/Hue",
+        "state": {
+          "branch": null,
+          "revision": "b22374b284e6f2ae086805ab2db3f7564545704e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
