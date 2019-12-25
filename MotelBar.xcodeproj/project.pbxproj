@@ -33,6 +33,7 @@
 		8585BBB723AFDFCE00AC844A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB623AFDFCE00AC844A /* Config.swift */; };
 		8585BBB923AFDFDF00AC844A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB823AFDFDF00AC844A /* Hotel.swift */; };
 		85B905C723B41FAB002932FD /* NSMenu+CleanMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */; };
+		85B905CB23B4251D002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905CA23B4251D002932FD /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		85B905C423B41F2B002932FD /* MotelBar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotelBar-Bridging-Header.h"; sourceTree = "<group>"; };
 		85B905C523B41F2B002932FD /* NSMenu+CleanMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenu+CleanMenu.h"; sourceTree = "<group>"; };
 		85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+CleanMenu.m"; sourceTree = "<group>"; };
+		85B905CA23B4251D002932FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		8585BB9C23AFC4BE00AC844A /* MotelBar */ = {
 			isa = PBXGroup;
 			children = (
+				85B905CA23B4251D002932FD /* Credits.html */,
 				85B905C523B41F2B002932FD /* NSMenu+CleanMenu.h */,
 				85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */,
 				8585BB9D23AFC4BE00AC844A /* AppDelegate.swift */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8585BBA823AFC4C100AC844A /* Main.storyboard in Resources */,
+				85B905CB23B4251D002932FD /* Credits.html in Resources */,
 				8585BBA523AFC4C100AC844A /* Preview Assets.xcassets in Resources */,
 				8585BBA223AFC4C100AC844A /* Assets.xcassets in Resources */,
 			);

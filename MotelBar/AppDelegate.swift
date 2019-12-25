@@ -25,13 +25,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.delegate = self
         [
             NSMenuItem.separator(),
-            NSMenuItem(title: "Hotel", action: #selector(openHotelHome), keyEquivalent: ""),
-            NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"),
+            NSMenuItem(title: "Open Hotel…", action: #selector(openHotelHome), keyEquivalent: ""),
+            NSMenuItem(title: "About…", action: #selector(showAbout), keyEquivalent: ""),
+            NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: "q"),
         ].forEach(menu.addItem(_:))
         statusItem.menu = menu
         renderMenu()
 
         NotificationCenter.default.addObserver(self, selector: #selector(renderMenu), name: Hotel.serverListUpdatedNoticationName, object: Hotel.shared)
+    }
+    
+    @objc func showAbout() {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.orderFrontStandardAboutPanel(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
