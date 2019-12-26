@@ -1,6 +1,6 @@
 import SwiftUI
 
-let indicatorSize: CGFloat = 11
+let indicatorSize: CGFloat = 8
 
 struct MonitorView: Highlightable, View {
     @ObservedObject var monitor: PubState<Monitor>
@@ -41,7 +41,7 @@ struct MonitorView: Highlightable, View {
     }
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 5) {
             Circle()
                 .foregroundColor(statusColor.opacity(0.75))
                 .frame(width: indicatorSize, height: indicatorSize)
