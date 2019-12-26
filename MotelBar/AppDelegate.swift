@@ -1,8 +1,10 @@
 import SwiftUI
+import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    let launchAtLoginItem = NSMenuItem(title: "Launch at Login", action: #selector(toggleLaunchAtLogin), keyEquivalent: "")
     var logWindow: NSWindow!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -12,11 +14,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.font = font
         }
 
+        if LaunchAtLogin.isEnabled {
+            launchAtLoginItem.state = .on
+        }
+
         let menu = NSMenu()
         menu.delegate = self
+
         [
             NSMenuItem.separator(),
-            NSMenuItem(title: "Open Hotel…", action: #selector(openHotelHome), keyEquivalent: ""),
+            launchAtLoginItem,
+            NSMenuItem(title: "Open Hotel…", action: #selector(openHotel), keyEquivalent: ""),
             NSMenuItem(title: "About…", action: #selector(showAbout), keyEquivalent: ""),
             NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: "q"),
         ].forEach(menu.addItem(_:))
@@ -29,6 +37,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func showAbout() {
         NSApp.activate(ignoringOtherApps: true)
         NSApp.orderFrontStandardAboutPanel(self)
+    }
+    
+    @objc func toggleLaunchAtLogin() {
+        if launchAtLoginItem.state == .on {
+            launchAtLoginItem.state = .off
+            LaunchAtLogin.isEnabled = false
+        } else {
+            launchAtLoginItem.state = .on
+            LaunchAtLogin.isEnabled = true
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -83,17 +101,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }}
     }
     
-    @objc func openHotelHome() {
-        openHotel()
-    }
-
-    func openHotel(route: String = "/") {
-        NSWorkspace.shared.open(
-            URL(
-                string: route,
-                relativeTo: URL(string: "http://hotel.\(HotelConfig.shared.tld)")!
-            )!
-        )
+    @objc func openHotel() {
+        NSWorkspace.shared.open(URL(string: "http://hotel.\(HotelConfig.shared.tld)")!)
     }
 }
 

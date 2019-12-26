@@ -33,7 +33,23 @@
 		8585BBB923AFDFDF00AC844A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB823AFDFDF00AC844A /* Hotel.swift */; };
 		85B905C723B41FAB002932FD /* NSMenu+CleanMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */; };
 		85B905CB23B4251D002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905CA23B4251D002932FD /* Credits.html */; };
+		85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B905D123B43191002932FD /* LaunchAtLogin.framework */; };
+		85B905D323B43191002932FD /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85B905D123B43191002932FD /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85B905D423B43192002932FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				85B905D323B43191002932FD /* LaunchAtLogin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		852661E023B01FFA00F927A7 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -64,6 +80,7 @@
 		85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+CleanMenu.m"; sourceTree = "<group>"; };
 		85B905CA23B4251D002932FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		85B905CE23B42D92002932FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85B905D123B43191002932FD /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +90,7 @@
 			files = (
 				852661FB23B02B4500F927A7 /* Hue in Frameworks */,
 				852661FE23B02B7200F927A7 /* BonMot in Frameworks */,
+				85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */,
 				852661F823B02AB000F927A7 /* FootlessParser in Frameworks */,
 				8585BBB423AFDF8300AC844A /* EventSource in Frameworks */,
 			);
@@ -112,6 +130,7 @@
 				85B905CE23B42D92002932FD /* README.md */,
 				8585BB9C23AFC4BE00AC844A /* MotelBar */,
 				8585BB9B23AFC4BE00AC844A /* Products */,
+				85B905D023B43191002932FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +174,14 @@
 			path = Hotel;
 			sourceTree = "<group>";
 		};
+		85B905D023B43191002932FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85B905D123B43191002932FD /* LaunchAtLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +192,8 @@
 				8585BB9623AFC4BE00AC844A /* Sources */,
 				8585BB9723AFC4BE00AC844A /* Frameworks */,
 				8585BB9823AFC4BE00AC844A /* Resources */,
+				85B905D423B43192002932FD /* Embed Frameworks */,
+				85B905CF23B43151002932FD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,6 +262,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85B905CF23B43151002932FD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8585BB9623AFC4BE00AC844A /* Sources */ = {
@@ -399,6 +448,10 @@
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MotelBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -424,6 +477,10 @@
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MotelBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
