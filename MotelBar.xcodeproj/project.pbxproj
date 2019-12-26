@@ -27,7 +27,6 @@
 		8573548E23B0070900F3679F /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573548D23B0070900F3679F /* Logs.swift */; };
 		8585BB9E23AFC4BE00AC844A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BB9D23AFC4BE00AC844A /* AppDelegate.swift */; };
 		8585BBA223AFC4C100AC844A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA123AFC4C100AC844A /* Assets.xcassets */; };
-		8585BBA523AFC4C100AC844A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA423AFC4C100AC844A /* Preview Assets.xcassets */; };
 		8585BBA823AFC4C100AC844A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA623AFC4C100AC844A /* Main.storyboard */; };
 		8585BBB423AFDF8300AC844A /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8585BBB323AFDF8300AC844A /* EventSource */; };
 		8585BBB723AFDFCE00AC844A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB623AFDFCE00AC844A /* Config.swift */; };
@@ -55,7 +54,6 @@
 		8585BB9A23AFC4BE00AC844A /* MotelBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotelBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8585BB9D23AFC4BE00AC844A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8585BBA123AFC4C100AC844A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8585BBA423AFC4C100AC844A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8585BBA723AFC4C100AC844A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8585BBA923AFC4C100AC844A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8585BBAA23AFC4C100AC844A /* MotelBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MotelBar.entitlements; sourceTree = "<group>"; };
@@ -142,18 +140,9 @@
 				8568A5C523B13AF600845E2C /* LogView.swift */,
 				8585BBA923AFC4C100AC844A /* Info.plist */,
 				8585BBAA23AFC4C100AC844A /* MotelBar.entitlements */,
-				8585BBA323AFC4C100AC844A /* Preview Content */,
 				85B905C423B41F2B002932FD /* MotelBar-Bridging-Header.h */,
 			);
 			path = MotelBar;
-			sourceTree = "<group>";
-		};
-		8585BBA323AFC4C100AC844A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				8585BBA423AFC4C100AC844A /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		8585BBB523AFDFCE00AC844A /* Hotel */ = {
@@ -239,7 +228,6 @@
 			files = (
 				8585BBA823AFC4C100AC844A /* Main.storyboard in Resources */,
 				85B905CB23B4251D002932FD /* Credits.html in Resources */,
-				8585BBA523AFC4C100AC844A /* Preview Assets.xcassets in Resources */,
 				8585BBA223AFC4C100AC844A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +396,6 @@
 				CODE_SIGN_ENTITLEMENTS = MotelBar/MotelBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MotelBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -434,7 +421,6 @@
 				CODE_SIGN_ENTITLEMENTS = MotelBar/MotelBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MotelBar/Preview Content\"";
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

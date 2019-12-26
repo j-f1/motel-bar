@@ -1,13 +1,4 @@
-//
-//  WindowController.swift
-//  MotelBar
-//
-//  Created by Jed Fox on 12/22/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
-import AppKit
-import Foundation
+import Cocoa
 
 class LogViewController: NSViewController {
     @objc var serverName: String = ""

@@ -1,13 +1,4 @@
-//
-//  Hotel.swift
-//  MotelBar
-//
-//  Created by Jed Fox on 12/22/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
 import EventSource
-import Foundation
 
 struct Monitor {
     let name: String

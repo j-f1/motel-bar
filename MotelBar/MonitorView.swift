@@ -1,12 +1,3 @@
-//
-//  MonitorView.swift
-//  MotelBar
-//
-//  Created by Jed Fox on 12/23/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
-import Foundation
 import SwiftUI
 
 let indicatorSize: CGFloat = 11

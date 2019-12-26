@@ -1,13 +1,3 @@
-//
-//  MenuItemView.swift
-//  MotelBar
-//
-//  Created by Jed Fox on 12/23/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
-import AppKit
-import Foundation
 import SwiftUI
 
 protocol Highlightable {

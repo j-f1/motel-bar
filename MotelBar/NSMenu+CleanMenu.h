@@ -1,14 +1,3 @@
-//
-//  NSMenu+CleanMenu.h
-//  MotelBar
-//
-//  Created by Jed Fox on 12/25/19.
-//  Copyright © 2019 Jed Fox. All rights reserved.
-//
-
-#import <AppKit/AppKit.h>
-
-
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
