@@ -1,10 +1,5 @@
 import SwiftUI
 
-protocol Highlightable {
-    /// `@ObservedObject var highlighted = Highlighted(false)`
-    var highlighted: PubState<Bool> { get }
-}
-
 class PubState<T>: ObservableObject {
     init(_ value: T) {
         self.value = value
@@ -13,10 +8,15 @@ class PubState<T>: ObservableObject {
     @Published var value: T
 }
 
+protocol Highlightable {
+    /// Implement with `@ObservedObject var highlighted = Highlighted(false)`
+    var highlighted: PubState<Bool> { get }
+}
+
 class MenuItemView<ContentView: View>: NSView {
     private var effectView: NSVisualEffectView
     let contentView: ContentView
-    private let hostView: NSHostingView<ContentView>
+    let hostView: NSHostingView<ContentView>
 
     init(_ view: ContentView) {
         effectView = NSVisualEffectView()
@@ -32,6 +32,10 @@ class MenuItemView<ContentView: View>: NSView {
         addSubview(effectView)
         addSubview(hostView)
     }
+    
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
@@ -44,11 +48,6 @@ class MenuItemView<ContentView: View>: NSView {
             hostView.frame = frame
         }
     }
-
-    required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func draw(_ dirtyRect: NSRect) {
         let highlighted = enclosingMenuItem!.isHighlighted
         effectView.isHidden = !highlighted

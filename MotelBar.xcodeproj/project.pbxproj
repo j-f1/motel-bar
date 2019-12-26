@@ -35,6 +35,8 @@
 		85B905CB23B4251D002932FD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 85B905CA23B4251D002932FD /* Credits.html */; };
 		85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B905D123B43191002932FD /* LaunchAtLogin.framework */; };
 		85B905D323B43191002932FD /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85B905D123B43191002932FD /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85B905D623B433DC002932FD /* SizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B905D523B433DC002932FD /* SizedButton.swift */; };
+		85B905D823B43479002932FD /* LogDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B905D723B43479002932FD /* LogDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +83,8 @@
 		85B905CA23B4251D002932FD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		85B905CE23B42D92002932FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85B905D123B43191002932FD /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		85B905D523B433DC002932FD /* SizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedButton.swift; sourceTree = "<group>"; };
+		85B905D723B43479002932FD /* LogDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 				852661FF23B10CE100F927A7 /* MonitorView.swift */,
 				8568A5C723B13EA200845E2C /* MenuItemView.swift */,
 				8568A5C523B13AF600845E2C /* LogView.swift */,
+				85B905D723B43479002932FD /* LogDisplay.swift */,
+				85B905D523B433DC002932FD /* SizedButton.swift */,
 				8585BBA923AFC4C100AC844A /* Info.plist */,
 				8585BBAA23AFC4C100AC844A /* MotelBar.entitlements */,
 				85B905C423B41F2B002932FD /* MotelBar-Bridging-Header.h */,
@@ -291,6 +297,7 @@
 				852661F323B01FFA00F927A7 /* Position.swift in Sources */,
 				852661ED23B01FFA00F927A7 /* Ansi.swift in Sources */,
 				852661F023B01FFA00F927A7 /* Parser.swift in Sources */,
+				85B905D623B433DC002932FD /* SizedButton.swift in Sources */,
 				852661EB23B01FFA00F927A7 /* String.swift in Sources */,
 				8585BB9E23AFC4BE00AC844A /* AppDelegate.swift in Sources */,
 				852661F223B01FFA00F927A7 /* Speed.swift in Sources */,
@@ -300,6 +307,7 @@
 				852661F423B01FFA00F927A7 /* AnsiColor.swift in Sources */,
 				8585BBB923AFDFDF00AC844A /* Hotel.swift in Sources */,
 				852661EC23B01FFA00F927A7 /* Error.swift in Sources */,
+				85B905D823B43479002932FD /* LogDisplay.swift in Sources */,
 				852661F123B01FFA00F927A7 /* Font.swift in Sources */,
 				8568A5C623B13AF600845E2C /* LogView.swift in Sources */,
 				852661EE23B01FFA00F927A7 /* Code.swift in Sources */,

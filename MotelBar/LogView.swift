@@ -25,23 +25,6 @@ class LogState: PubState<String> {
     }
 }
 
-struct SizedButton: View {
-    let title: String
-    let action: () -> Void
-    let width: CGFloat
-    init(_ title: String, width: CGFloat, action: @escaping () -> Void) {
-        self.title = title
-        self.action = action
-        self.width = width
-    }
-
-    var body: some View {
-        Button(action: action) {
-            Text(title).frame(width: width)
-        }
-    }
-}
-
 struct LogView: View {
     @ObservedObject var monitor: PubState<Monitor>
     @ObservedObject var log: LogState
@@ -65,15 +48,15 @@ struct LogView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             HStack {
-                SizedButton(buttonTitle, width: 30) {
+                SizedButton(title: buttonTitle, width: 30) {
                     if self.monitor.value.status == .running {
                         self.monitor.value.stop()
                     } else {
                         self.monitor.value.start()
                     }
                 }
-                showIf(monitor.value.status == .running) {
-                    SizedButton("Restart", width: 45) {
+                if monitor.value.status == .running {
+                    SizedButton(title: "Restart", width: 45) {
                         self.monitor.value.stop {
                             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now().advanced(by: .milliseconds(100))) {
                                 self.monitor.value.start()
@@ -96,7 +79,7 @@ struct LogView: View {
                     Image(nsImage: NSImage(named: NSImage.touchBarOpenInBrowserTemplateName)!)
                         .frame(height: 20)
                 }.buttonStyle(BorderlessButtonStyle())
-                SizedButton("Clear", width: 45) {
+                SizedButton(title: "Clear", width: 45) {
                     LogWatcher.shared.logs[self.monitor.value.name] = ""
                     self.log.helper.updateState()
                 }
@@ -105,52 +88,6 @@ struct LogView: View {
             .padding(.top, 4)
             LogDisplay(content: $log.value)
                 .frame(width: size.width, height: size.height)
-        }
-    }
-}
-
-func showIf<T>(_ cond: Bool, cb: () -> T) -> T? {
-    cond ? cb() : nil
-}
-
-final class LogDisplay: NSViewRepresentable {
-    typealias NSViewType = NSScrollView
-
-    let content: Binding<String>
-    init(content: Binding<String>) {
-        self.content = content
-    }
-
-    func makeNSView(context: NSViewRepresentableContext<LogDisplay>) -> NSViewType {
-        let scrollView = NSTextView.scrollableTextView()
-        let textView = scrollView.documentView as! NSTextView
-
-        scrollView.drawsBackground = false
-        textView.usesFindBar = true
-        textView.isEditable = false
-        textView.isSelectable = false
-        textView.drawsBackground = false
-        textView.textContainerInset = NSSize(width: 4, height: 0)
-
-        return scrollView
-    }
-
-    func updateNSView(_ scrollView: NSViewType, context: NSViewRepresentableContext<LogDisplay>) {
-        let font = NSFont(name: "Fira Code", size: NSFont.systemFontSize) ?? NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        let textView = scrollView.documentView as! NSTextView
-        if let attStr = try? content.wrappedValue.ansified(using: font) {
-            let oldVal = textView.textStorage!.attributedString()
-            textView.textStorage!.setAttributedString(attStr)
-            if attStr != oldVal {
-                DispatchQueue.main.async {
-                    let y = textView.frame.height - scrollView.contentSize.height
-                    NSAnimationContext.beginGrouping()
-                    NSAnimationContext.current.duration = 0.2
-                    scrollView.contentView.animator().setBoundsOrigin(NSPoint(x: 0, y: y))
-                    scrollView.reflectScrolledClipView(scrollView.contentView)
-                    NSAnimationContext.endGrouping()
-                }
-            }
         }
     }
 }
