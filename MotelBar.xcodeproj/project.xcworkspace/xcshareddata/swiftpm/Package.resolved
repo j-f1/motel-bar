@@ -12,10 +12,10 @@
       },
       {
         "package": "EventSource",
-        "repositoryURL": "https://github.com/MoveUpwardsDev/EventSource",
+        "repositoryURL": "https://github.com/inaka/EventSource",
         "state": {
           "branch": null,
-          "revision": "316522ad8c5fe08775a8bcd1cdf55b976474b911",
+          "revision": "78934b361891c7d0fa3d399d128e959f0c94d267",
           "version": null
         }
       },

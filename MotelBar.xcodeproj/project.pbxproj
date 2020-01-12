@@ -28,7 +28,7 @@
 		8585BB9E23AFC4BE00AC844A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BB9D23AFC4BE00AC844A /* AppDelegate.swift */; };
 		8585BBA223AFC4C100AC844A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA123AFC4C100AC844A /* Assets.xcassets */; };
 		8585BBA823AFC4C100AC844A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA623AFC4C100AC844A /* Main.storyboard */; };
-		8585BBB423AFDF8300AC844A /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8585BBB323AFDF8300AC844A /* EventSource */; };
+        8530C9B023CBC92700692008 /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8530C9AF23CBC92700692008 /* EventSource */; };
 		8585BBB723AFDFCE00AC844A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB623AFDFCE00AC844A /* Config.swift */; };
 		8585BBB923AFDFDF00AC844A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB823AFDFDF00AC844A /* Hotel.swift */; };
 		85B905C723B41FAB002932FD /* NSMenu+CleanMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */; };
@@ -96,7 +96,7 @@
 				852661FE23B02B7200F927A7 /* BonMot in Frameworks */,
 				85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */,
 				852661F823B02AB000F927A7 /* FootlessParser in Frameworks */,
-				8585BBB423AFDF8300AC844A /* EventSource in Frameworks */,
+                8530C9B023CBC92700692008 /* EventSource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +207,7 @@
 			);
 			name = MotelBar;
 			packageProductDependencies = (
-				8585BBB323AFDF8300AC844A /* EventSource */,
+                8530C9AF23CBC92700692008 /* EventSource */,
 				852661F723B02AB000F927A7 /* FootlessParser */,
 				852661FA23B02B4500F927A7 /* Hue */,
 				852661FD23B02B7200F927A7 /* BonMot */,
@@ -242,7 +242,7 @@
 			);
 			mainGroup = 8585BB9123AFC4BE00AC844A;
 			packageReferences = (
-				8585BBB223AFDF8300AC844A /* XCRemoteSwiftPackageReference "EventSource" */,
+                8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */,
 				852661F623B02AB000F927A7 /* XCRemoteSwiftPackageReference "FootlessParser" */,
 				852661F923B02B4500F927A7 /* XCRemoteSwiftPackageReference "Hue" */,
 				852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */,
@@ -554,12 +554,12 @@
 				revision = 359976f21e0e881f7f354bc6ccd34a8553b4f761;
 			};
 		};
-		8585BBB223AFDF8300AC844A /* XCRemoteSwiftPackageReference "EventSource" */ = {
+		8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MoveUpwardsDev/EventSource";
+			repositoryURL = "https://github.com/inaka/EventSource";
 			requirement = {
 				kind = revision;
-				revision = 316522ad8c5fe08775a8bcd1cdf55b976474b911;
+				revision = 78934b361891c7d0fa3d399d128e959f0c94d267;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -580,9 +580,9 @@
 			package = 852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */;
 			productName = BonMot;
 		};
-		8585BBB323AFDF8300AC844A /* EventSource */ = {
+		8530C9AF23CBC92700692008 /* EventSource */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8585BBB223AFDF8300AC844A /* XCRemoteSwiftPackageReference "EventSource" */;
+			package = 8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */;
 			productName = EventSource;
 		};
 /* End XCSwiftPackageProductDependency section */
