@@ -21,6 +21,7 @@
 		852661FB23B02B4500F927A7 /* Hue in Frameworks */ = {isa = PBXBuildFile; productRef = 852661FA23B02B4500F927A7 /* Hue */; };
 		852661FE23B02B7200F927A7 /* BonMot in Frameworks */ = {isa = PBXBuildFile; productRef = 852661FD23B02B7200F927A7 /* BonMot */; };
 		8526620023B10CE100F927A7 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852661FF23B10CE100F927A7 /* MonitorView.swift */; };
+		8530C9B023CBC92700692008 /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8530C9AF23CBC92700692008 /* EventSource */; };
 		8568A5C623B13AF600845E2C /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568A5C523B13AF600845E2C /* LogView.swift */; };
 		8568A5C823B13EA200845E2C /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568A5C723B13EA200845E2C /* MenuItemView.swift */; };
 		8573548C23AFF60100F3679F /* LogWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573548B23AFF60100F3679F /* LogWindow.swift */; };
@@ -28,7 +29,6 @@
 		8585BB9E23AFC4BE00AC844A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BB9D23AFC4BE00AC844A /* AppDelegate.swift */; };
 		8585BBA223AFC4C100AC844A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA123AFC4C100AC844A /* Assets.xcassets */; };
 		8585BBA823AFC4C100AC844A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8585BBA623AFC4C100AC844A /* Main.storyboard */; };
-        8530C9B023CBC92700692008 /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8530C9AF23CBC92700692008 /* EventSource */; };
 		8585BBB723AFDFCE00AC844A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB623AFDFCE00AC844A /* Config.swift */; };
 		8585BBB923AFDFDF00AC844A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585BBB823AFDFDF00AC844A /* Hotel.swift */; };
 		85B905C723B41FAB002932FD /* NSMenu+CleanMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B905C623B41FAB002932FD /* NSMenu+CleanMenu.m */; };
@@ -96,7 +96,7 @@
 				852661FE23B02B7200F927A7 /* BonMot in Frameworks */,
 				85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */,
 				852661F823B02AB000F927A7 /* FootlessParser in Frameworks */,
-                8530C9B023CBC92700692008 /* EventSource in Frameworks */,
+				8530C9B023CBC92700692008 /* EventSource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +207,7 @@
 			);
 			name = MotelBar;
 			packageProductDependencies = (
-                8530C9AF23CBC92700692008 /* EventSource */,
+				8530C9AF23CBC92700692008 /* EventSource */,
 				852661F723B02AB000F927A7 /* FootlessParser */,
 				852661FA23B02B4500F927A7 /* Hue */,
 				852661FD23B02B7200F927A7 /* BonMot */,
@@ -242,7 +242,7 @@
 			);
 			mainGroup = 8585BB9123AFC4BE00AC844A;
 			packageReferences = (
-                8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */,
+				8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */,
 				852661F623B02AB000F927A7 /* XCRemoteSwiftPackageReference "FootlessParser" */,
 				852661F923B02B4500F927A7 /* XCRemoteSwiftPackageReference "Hue" */,
 				852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */,
@@ -542,8 +542,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zenangst/Hue";
 			requirement = {
-				kind = revision;
-				revision = b22374b284e6f2ae086805ab2db3f7564545704e;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
 			};
 		};
 		852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */ = {
