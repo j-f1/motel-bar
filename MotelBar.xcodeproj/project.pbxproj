@@ -19,8 +19,8 @@
 		852661F423B01FFA00F927A7 /* AnsiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852661E923B01FFA00F927A7 /* AnsiColor.swift */; };
 		852661F823B02AB000F927A7 /* FootlessParser in Frameworks */ = {isa = PBXBuildFile; productRef = 852661F723B02AB000F927A7 /* FootlessParser */; };
 		852661FB23B02B4500F927A7 /* Hue in Frameworks */ = {isa = PBXBuildFile; productRef = 852661FA23B02B4500F927A7 /* Hue */; };
-		852661FE23B02B7200F927A7 /* BonMot in Frameworks */ = {isa = PBXBuildFile; productRef = 852661FD23B02B7200F927A7 /* BonMot */; };
 		8526620023B10CE100F927A7 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852661FF23B10CE100F927A7 /* MonitorView.swift */; };
+		852D684B24BB62F7001F8227 /* BonMot in Frameworks */ = {isa = PBXBuildFile; productRef = 852D684A24BB62F7001F8227 /* BonMot */; };
 		8530C9B023CBC92700692008 /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = 8530C9AF23CBC92700692008 /* EventSource */; };
 		8568A5C623B13AF600845E2C /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568A5C523B13AF600845E2C /* LogView.swift */; };
 		8568A5C823B13EA200845E2C /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568A5C723B13EA200845E2C /* MenuItemView.swift */; };
@@ -92,8 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852D684B24BB62F7001F8227 /* BonMot in Frameworks */,
 				852661FB23B02B4500F927A7 /* Hue in Frameworks */,
-				852661FE23B02B7200F927A7 /* BonMot in Frameworks */,
 				85B905D223B43191002932FD /* LaunchAtLogin.framework in Frameworks */,
 				852661F823B02AB000F927A7 /* FootlessParser in Frameworks */,
 				8530C9B023CBC92700692008 /* EventSource in Frameworks */,
@@ -210,7 +210,7 @@
 				8530C9AF23CBC92700692008 /* EventSource */,
 				852661F723B02AB000F927A7 /* FootlessParser */,
 				852661FA23B02B4500F927A7 /* Hue */,
-				852661FD23B02B7200F927A7 /* BonMot */,
+				852D684A24BB62F7001F8227 /* BonMot */,
 			);
 			productName = MotelBar;
 			productReference = 8585BB9A23AFC4BE00AC844A /* MotelBar.app */;
@@ -245,7 +245,7 @@
 				8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */,
 				852661F623B02AB000F927A7 /* XCRemoteSwiftPackageReference "FootlessParser" */,
 				852661F923B02B4500F927A7 /* XCRemoteSwiftPackageReference "Hue" */,
-				852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */,
+				852D684924BB62F7001F8227 /* XCRemoteSwiftPackageReference "BonMot" */,
 			);
 			productRefGroup = 8585BB9B23AFC4BE00AC844A /* Products */;
 			projectDirPath = "";
@@ -546,12 +546,12 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */ = {
+		852D684924BB62F7001F8227 /* XCRemoteSwiftPackageReference "BonMot" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Rightpoint/BonMot";
 			requirement = {
-				kind = revision;
-				revision = 359976f21e0e881f7f354bc6ccd34a8553b4f761;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.1;
 			};
 		};
 		8530C9AE23CBC92700692008 /* XCRemoteSwiftPackageReference "EventSource" */ = {
@@ -575,9 +575,9 @@
 			package = 852661F923B02B4500F927A7 /* XCRemoteSwiftPackageReference "Hue" */;
 			productName = Hue;
 		};
-		852661FD23B02B7200F927A7 /* BonMot */ = {
+		852D684A24BB62F7001F8227 /* BonMot */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 852661FC23B02B7200F927A7 /* XCRemoteSwiftPackageReference "BonMot" */;
+			package = 852D684924BB62F7001F8227 /* XCRemoteSwiftPackageReference "BonMot" */;
 			productName = BonMot;
 		};
 		8530C9AF23CBC92700692008 /* EventSource */ = {

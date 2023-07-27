@@ -29,6 +29,7 @@ enum ServerStatus: String {
     case running
     case stopping
     case stopped
+    case crashed
 }
 
 class Hotel {

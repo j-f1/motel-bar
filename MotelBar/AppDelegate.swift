@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSMenuItem.separator(),
             launchAtLoginItem,
             NSMenuItem(title: "Open Hotel…", action: #selector(openHotel), keyEquivalent: ""),
-            NSMenuItem(title: "About…", action: #selector(showAbout), keyEquivalent: ""),
+            NSMenuItem(title: "About", action: #selector(showAbout), keyEquivalent: ""),
             NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: "q"),
         ].forEach(menu.addItem(_:))
         statusItem.menu = menu
@@ -78,15 +78,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             item.isEnabled = false
         } else {
             menu.cleanServerMenu(Hotel.shared.servers.map { $0.name })
-            Hotel.shared.servers.forEach { server in
-                if let idx = menu.items.firstIndex(where: { item in item.representedObject as? String == server.name }) {
-                    let item = menu.items[idx]
+            for (idx, server) in Hotel.shared.servers.enumerated() {
+                if let viewIdx = menu.items.firstIndex(where: { item in item.representedObject as? String == server.name }) {
+                    let item = menu.items[viewIdx]
                     (item.view as! MenuItemView<MonitorView>).contentView.monitor.value = server
                     (item.submenu!.items.first!.view as! MenuItemView<LogView>).contentView.monitor.value = server
                     item.state = server.status == .running ? .on : .off
                 } else {
                     let item = menu.insertItem(withTitle: server.name, action: nil, keyEquivalent: "",
-                                               at: sepIdx())
+                                               at: idx)
                     item.representedObject = server.name
                     item.view = MenuItemView(MonitorView(server))
                     let submenu = NSMenu()

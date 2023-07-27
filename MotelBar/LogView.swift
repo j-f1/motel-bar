@@ -40,7 +40,7 @@ struct LogView: View {
             return "Stop"
 //        case .stopping:
 //            return "Stopping…"
-        case .stopping, .stopped:
+        case .stopping, .stopped, .crashed:
             return "Start"
         }
     }
@@ -78,11 +78,17 @@ struct LogView: View {
                 }) {
                     Image(nsImage: NSImage(named: NSImage.touchBarOpenInBrowserTemplateName)!)
                         .frame(height: 20)
+                        .accessibility(label: Text("Open in Browser"))
                 }.buttonStyle(BorderlessButtonStyle())
                 SizedButton(title: "Clear", width: 45) {
                     LogWatcher.shared.logs[self.monitor.value.name] = ""
                     self.log.helper.updateState()
                 }
+                Button(action: {  }) {
+                    Image(nsImage: NSImage(named: NSImage.enterFullScreenTemplateName)!)
+                        .frame(height: 20)
+                        .accessibility(label: Text("Open Window"))
+                }.buttonStyle(BorderlessButtonStyle())
             }
             .padding(.horizontal, 8)
             .padding(.top, 4)
@@ -94,6 +100,7 @@ struct LogView: View {
 
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
-        LogView(Monitor(name: "app-name", status: .running, crashes: 0, command: ["ls", "-l"], cwd: URL(fileURLWithPath: "/foo/bar/baz"), env: [:]))
+        LogWatcher.shared.logs["app-name"] = "Lorem ipsum\ndolor sit amet"
+        return LogView(Monitor(name: "app-name", status: .running, crashes: 0, command: ["ls", "-l"], cwd: URL(fileURLWithPath: "/foo/bar/baz"), env: [:]))
     }
 }

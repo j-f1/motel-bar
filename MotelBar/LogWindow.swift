@@ -1,5 +1,19 @@
 import Cocoa
 
+class LogWindowController: NSWindowController {
+    @IBOutlet weak var startStopButton: NSButton!
+    @IBOutlet weak var restartButton: NSButton!
+    @IBOutlet weak var titleLabel: NSTextField!
+    @IBAction func startStop(_ sender: Any) {
+    }
+    @IBAction func restart(_ sender: Any) {
+    }
+    @IBAction func openInBrowser(_ sender: Any) {
+    }
+    @IBAction func clear(_ sender: Any) {
+    }
+}
+
 class LogViewController: NSViewController {
     @objc var serverName: String = ""
     @IBOutlet var textView: NSTextView!

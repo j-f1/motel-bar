@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -683,21 +684,115 @@
         <!--Window Controller-->
         <scene sceneID="a1K-em-BqT">
             <objects>
-                <windowController storyboardIdentifier="LogWindow" id="JSY-tL-I6U" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="documentWindow" frameAutosaveName="" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="vBV-YS-UhV">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                <windowController storyboardIdentifier="LogWindow" id="JSY-tL-I6U" customClass="LogWindowController" customModule="MotelBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="documentWindow" frameAutosaveName="" titleVisibility="hidden" id="vBV-YS-UhV">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="400"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <toolbar key="toolbar" implicitIdentifier="03D1826F-CA79-4F17-B9FE-40E14C678023" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="PAD-Ii-5Wv">
-                            <allowedToolbarItems/>
-                            <defaultToolbarItems/>
+                        <toolbar key="toolbar" implicitIdentifier="F1977D33-0C86-4587-AFE1-B3FE4DA27D22" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="WdS-df-FEb">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="uRG-1S-9It"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="wDS-66-ekt"/>
+                                <toolbarItem implicitItemIdentifier="E1EF9B0F-3E41-4F0F-982E-71F3B73C82B2" label="" paletteLabel="Stop" image="NSStopProgressTemplate" id="6dm-XQ-LTl">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="34" height="24"/>
+                                    <size key="maxSize" width="34" height="24"/>
+                                    <button key="view" verticalHuggingPriority="750" id="yk0-L2-hsb">
+                                        <rect key="frame" x="0.0" y="14" width="34" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Stop" bezelStyle="texturedRounded" image="NSStopProgressTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="2t9-Ms-4wB">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent">.</string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startStop:" target="JSY-tL-I6U" id="8zl-xP-FWO"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="2ECF31DE-A57F-4A00-8321-D21E617A30BA" label="" paletteLabel="Restart" image="NSRefreshTemplate" id="8de-Vq-8P0">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="34" height="24"/>
+                                    <size key="maxSize" width="34" height="24"/>
+                                    <button key="view" verticalHuggingPriority="750" id="kUg-Db-sRO">
+                                        <rect key="frame" x="6" y="14" width="34" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Restart" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="dXa-XI-asr">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent">r</string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="restart:" target="JSY-tL-I6U" id="g8e-7t-wuN"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3304EEF6-8878-4A64-855E-A1CE3B8DB4F2" label="" paletteLabel="Title" sizingBehavior="auto" id="xXb-Sk-RFt">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="q8a-Al-dGa">
+                                        <rect key="frame" x="0.0" y="14" width="115" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="some-project logs" id="S1z-Ly-tn5">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3F628437-BB8B-4903-BC46-284C0A90C829" label="Open in Browser" paletteLabel="Open in Browser" image="NSTouchBarOpenInBrowserTemplate" id="lmx-pk-Kfp">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="26" height="24"/>
+                                    <size key="maxSize" width="34" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="hAT-SK-g7v">
+                                        <rect key="frame" x="34" y="14" width="26" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Open in Browser" bezelStyle="texturedRounded" image="NSTouchBarOpenInBrowserTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gf4-9o-TzJ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openInBrowser:" target="JSY-tL-I6U" id="VAI-yk-AL2"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="B43A9F23-6BC5-4881-ABD9-06C47AC79918" label="" paletteLabel="Clear" image="NSTouchBarDeleteTemplate" id="6gZ-NI-LlI">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="34" height="25"/>
+                                    <size key="maxSize" width="34" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="U41-v3-bfM">
+                                        <rect key="frame" x="1" y="14" width="34" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Clear" bezelStyle="texturedRounded" image="NSTouchBarDeleteTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BrQ-bI-QM1">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clear:" target="JSY-tL-I6U" id="XFY-Oi-mcX"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="6dm-XQ-LTl"/>
+                                <toolbarItem reference="8de-Vq-8P0"/>
+                                <toolbarItem reference="wDS-66-ekt"/>
+                                <toolbarItem reference="xXb-Sk-RFt"/>
+                                <toolbarItem reference="wDS-66-ekt"/>
+                                <toolbarItem reference="lmx-pk-Kfp"/>
+                                <toolbarItem reference="6gZ-NI-LlI"/>
+                            </defaultToolbarItems>
                         </toolbar>
                         <connections>
                             <outlet property="delegate" destination="JSY-tL-I6U" id="NSh-a3-PmQ"/>
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="restartButton" destination="kUg-Db-sRO" id="6g6-lZ-xMy"/>
+                        <outlet property="startStopButton" destination="yk0-L2-hsb" id="XDQ-Gx-lyM"/>
+                        <outlet property="titleLabel" destination="q8a-Al-dGa" id="m8N-PF-5Sl"/>
                         <segue destination="fFn-bQ-bMi" kind="relationship" relationship="window.shadowedContentViewController" id="cpe-jm-uZz"/>
                     </connections>
                 </windowController>
@@ -715,50 +810,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView blendingMode="behindWindow" material="titlebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-Sc-kza">
-                                <rect key="frame" x="0.0" y="363" width="600" height="37"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vDb-We-5aA">
-                                        <rect key="frame" x="514" y="1" width="72" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="snH-dk-sw8">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="clear:" target="fFn-bQ-bMi" id="RE3-1f-Gqb"/>
-                                        </connections>
-                                    </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nAO-Zs-ApE">
-                                        <rect key="frame" x="258" y="11" width="84" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Logs for XXX" id="UWq-Dc-I5a">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="vDb-We-5aA" firstAttribute="centerY" secondItem="VPd-Sc-kza" secondAttribute="centerY" id="Hpp-fY-YlW"/>
-                                    <constraint firstItem="nAO-Zs-ApE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VPd-Sc-kza" secondAttribute="leading" constant="20" symbolic="YES" id="Jsf-Uz-HdP"/>
-                                    <constraint firstItem="nAO-Zs-ApE" firstAttribute="centerY" secondItem="VPd-Sc-kza" secondAttribute="centerY" id="VR0-qL-qDj"/>
-                                    <constraint firstAttribute="trailing" secondItem="vDb-We-5aA" secondAttribute="trailing" constant="20" symbolic="YES" id="Xaa-5E-uGF"/>
-                                    <constraint firstItem="nAO-Zs-ApE" firstAttribute="centerX" secondItem="VPd-Sc-kza" secondAttribute="centerX" id="ay7-q0-Kg8"/>
-                                    <constraint firstAttribute="height" constant="37" id="dhq-Hv-fUW"/>
-                                    <constraint firstItem="vDb-We-5aA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nAO-Zs-ApE" secondAttribute="trailing" constant="8" symbolic="YES" id="uXE-0C-C4C"/>
-                                </constraints>
-                            </visualEffectView>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8N-0f-KFM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="362"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="TAX-8F-ZZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="362"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" incrementalSearchingEnabled="YES" id="a0c-Jb-Smn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="362"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="600" height="362"/>
+                                            <size key="minSize" width="600" height="400"/>
                                             <size key="maxSize" width="624" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content=" ">
@@ -779,7 +842,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="fsa-Kw-lkG">
-                                    <rect key="frame" x="584" y="0.0" width="16" height="362"/>
+                                    <rect key="frame" x="584" y="0.0" width="16" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -787,20 +850,22 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="i8N-0f-KFM" secondAttribute="trailing" id="2Hn-BC-kWa"/>
                             <constraint firstAttribute="bottom" secondItem="i8N-0f-KFM" secondAttribute="bottom" id="Dle-jy-9Hl"/>
-                            <constraint firstItem="i8N-0f-KFM" firstAttribute="top" secondItem="VPd-Sc-kza" secondAttribute="bottom" constant="1" id="GU4-kf-lRa"/>
-                            <constraint firstItem="VPd-Sc-kza" firstAttribute="leading" secondItem="ud2-8R-adG" secondAttribute="leading" id="Qdb-y1-4jo"/>
-                            <constraint firstAttribute="trailing" secondItem="VPd-Sc-kza" secondAttribute="trailing" id="tcW-H3-1qi"/>
+                            <constraint firstItem="i8N-0f-KFM" firstAttribute="top" secondItem="ud2-8R-adG" secondAttribute="top" id="T7Q-KF-Upy"/>
                             <constraint firstItem="i8N-0f-KFM" firstAttribute="leading" secondItem="ud2-8R-adG" secondAttribute="leading" id="w2m-td-Lci"/>
-                            <constraint firstItem="VPd-Sc-kza" firstAttribute="top" secondItem="ud2-8R-adG" secondAttribute="top" id="zWu-dr-myN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="textView" destination="a0c-Jb-Smn" id="ytK-r6-hP3"/>
-                        <outlet property="titleLabel" destination="nAO-Zs-ApE" id="Doi-8i-HKC"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="626" y="310"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSRefreshTemplate" width="14" height="16"/>
+        <image name="NSStopProgressTemplate" width="14" height="13"/>
+        <image name="NSTouchBarDeleteTemplate" width="15" height="17"/>
+        <image name="NSTouchBarOpenInBrowserTemplate" width="15" height="15"/>
+    </resources>
 </document>

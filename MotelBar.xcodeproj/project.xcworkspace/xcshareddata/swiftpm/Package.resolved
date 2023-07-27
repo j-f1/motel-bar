@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Rightpoint/BonMot",
         "state": {
           "branch": null,
-          "revision": "359976f21e0e881f7f354bc6ccd34a8553b4f761",
-          "version": null
+          "revision": "76fbef6e8d2095c7dace1912aa3b79ba86ad1150",
+          "version": "5.5.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/zenangst/Hue",
         "state": {
           "branch": null,
-          "revision": "b22374b284e6f2ae086805ab2db3f7564545704e",
-          "version": null
+          "revision": "b9d920cee4ba795fefb828d130744eee1e3d2feb",
+          "version": "5.0.1"
         }
       }
     ]
